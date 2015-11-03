@@ -1,0 +1,12 @@
+{
+  "net": {
+    "host"           : "rpi2-devel.mti-team2.dyndns.org",
+    "port"           : 6667,
+    "ui_channel"     : "mylife-ui",
+    "admin_channel"  : "mylife-admin",
+    "core_channel"   : "mylife-core"
+  },
+  "data": {
+    "directory": "data/"
+  }
+}
