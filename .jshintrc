@@ -14,8 +14,7 @@
   "predef":
   [
     "describe",
-    "it",
-    "isNan"
+    "it"
   ],
   "proto"     : true,
   "quotmark"  : false,
