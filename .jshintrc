@@ -1,0 +1,27 @@
+{
+  "browser"   : false,
+  "curly"     : true,
+  "devel"     : true,
+  "eqeqeq"    : true,
+  "eqnull"    : true,
+  "esnext"    : true,
+  "evil"      : false,
+  "expr"      : true,
+  "laxcomma"  : true,
+  "newcap"    : true,
+  "node"      : true,
+  "nonew"     : true,
+  "predef":
+  [
+    "describe",
+    "it",
+    "isNan"
+  ],
+  "proto"     : true,
+  "quotmark"  : false,
+  "smarttabs" : true,
+  "strict"    : false,
+  "trailing"  : false,
+  "undef"     : true,
+  "unused"    : true
+}
