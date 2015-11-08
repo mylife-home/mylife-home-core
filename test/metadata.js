@@ -15,6 +15,8 @@ describe('Types', function() {
   it('build enum', function() {
     const type = metadata.Type.enum('a', 'b', 'c');
     assert.deepEqual(type.values, ['a', 'b', 'c']);
+    const type2 = metadata.Type.enum(['a', 'b', 'c']);
+    assert.deepEqual(type2.values, ['a', 'b', 'c']);
   });
 
   it('type readonly', function() {
