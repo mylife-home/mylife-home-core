@@ -4,7 +4,8 @@
     "port"           : 6667,
     "ui_channel"     : "mylife-ui",
     "admin_channel"  : "mylife-admin",
-    "core_channel"   : "mylife-core"
+    "core_channel"   : "mylife-core",
+    "log_channel"    : "mylife-log"
   },
   "data": {
     "directory": "data/"
