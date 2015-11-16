@@ -8,6 +8,7 @@
   "dependencies": {
     "async": "*",
     "deep-freeze": "*",
+    "del": "*",
     "github": "*",
     "log4js": "*",
     "mylife-home-common": "vincent-tr/mylife-home-common"
