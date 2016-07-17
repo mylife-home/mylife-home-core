@@ -9,7 +9,7 @@
     "async": "*",
     "deep-freeze": "*",
     "del": "*",
-    "github": "*",
+    "github": "0.2.4",
     "log4js": "*",
     "mylife-home-common": "vincent-tr/mylife-home-common"
   },
