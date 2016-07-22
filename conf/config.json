@@ -1,6 +1,6 @@
 {
   "net": {
-    "host"           : "rpi2-devel.mti-team2.dyndns.org",
+    "host"           : "localhost",
     "port"           : 6667,
     "ui_channel"     : "mylife-ui",
     "admin_channel"  : "mylife-admin",
