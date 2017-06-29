@@ -10,6 +10,7 @@ configFile = path.resolve(configFile);
 const config = require(configFile);
 
 common.logging.init(config);
+common.admin.SysInfo.setup({ rootDirectory: path.resolve(__dirname, '..') });
 
 const server = new Server(config);
 
