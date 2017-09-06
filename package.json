@@ -1,9 +1,9 @@
 {
   "name": "mylife-home-core",
-  "version": "1.0.1",
-  "description": "Mylife Home Resources",
+  "version": "1.0.2",
+  "description": "Mylife Home Core",
   "main": "index.js",
-  "repository": "https://github.com/vincent-tr/mylife-home-core",
+  "repository": "https://github.com/mylife-home/mylife-home-core",
   "author": "Vincent Trumpff",
   "dependencies": {
     "async": "*",
@@ -11,7 +11,7 @@
     "del": "*",
     "github": "0.2.4",
     "log4js": "*",
-    "mylife-home-common": "vincent-tr/mylife-home-common"
+    "mylife-home-common": "mylife-home/mylife-home-common"
   },
   "devDependencies": {
     "chai": "*",
