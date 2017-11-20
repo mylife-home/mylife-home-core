@@ -53,16 +53,13 @@ switch(command) {
     fs.symlinkSync(`../../../${repoPrefix}${moduleName}`, path.join(moduleDirectory, 'linked'));
 
     const packageJson = {
-      main : './linked',
-      moduleMetadata : {
-        name        : moduleName,
-        description : 'Linked module',
-        commit      : 'linked',
-        date        : new Date().toISOString()
-      }
+      name        : moduleName,
+      description : 'Linked module',
+      commit      : 'linked',
+      date        : new Date().toISOString()
     };
 
-    fs.writeFileSync(path.join(moduleDirectory, 'package.json'), JSON.stringify(packageJson, null, 2), { mode : 0o644 });
+    fs.writeFileSync(path.join(moduleDirectory, 'module.json'), JSON.stringify(packageJson, null, 2), { mode : 0o644 });
     console.log('Module linked');
     break;
   }
