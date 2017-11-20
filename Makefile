@@ -17,3 +17,12 @@ test-silent:
 
 start:
 	$(NODE) bin/server.js
+
+mod-clear:
+	@ $(NODE) bin/modules.js clear
+
+mod-link:
+	@ $(NODE) bin/modules.js link ${MODULE}
+
+mod-unlink:
+	@ $(NODE) bin/modules.js unlink ${MODULE}
