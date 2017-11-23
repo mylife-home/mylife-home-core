@@ -27,7 +27,7 @@ build/Release
 node_modules
 
 # data directory
-data
+/data
 
 # plugins directory
-plugins
+/plugins
