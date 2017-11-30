@@ -25,7 +25,7 @@ mod-link:
 	@ $(NODE) bin/modules.js link ${MODULE}
 
 mod-install:
-	@ $(NODE) bin/modules.js install ${MODULE}
+	@ $(NODE) bin/modules.js install ${MODULE} ${COMMIT}
 
 mod-uninstall:
 	@ $(NODE) bin/modules.js uninstall ${MODULE}
