@@ -24,5 +24,8 @@ mod-clear:
 mod-link:
 	@ $(NODE) bin/modules.js link ${MODULE}
 
-mod-unlink:
-	@ $(NODE) bin/modules.js unlink ${MODULE}
+mod-install:
+	@ $(NODE) bin/modules.js install ${MODULE}
+
+mod-uninstall:
+	@ $(NODE) bin/modules.js uninstall ${MODULE}
