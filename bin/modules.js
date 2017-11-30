@@ -5,24 +5,13 @@ const ModuleRepository = require('../lib/plugins/module-repository');
 
 const repository = new ModuleRepository();
 
-let _remoteList;
-
 async function findMedataByName(name) {
   const list = await repository.list();
   return list.find(metadata => metadata.name === name);
 }
 
-async function remoteList() {
-  // cache it
-  if(!_remoteList) {
-    _remoteList = await common.utils.promise.fromCallback(done => common.admin.pluginFetcher(done))();
-  }
-  return _remoteList;
-}
-
-async function findRemoteMedataByName(name) {
-  const list = await remoteList();
-  return list.find(metadata => metadata.name === name);
+async function getRemoteMetadata(moduleName, moduleCommit) {
+  return await common.utils.promise.fromCallback(done => common.admin.pluginFetcher.one(moduleName, moduleCommit, done))();
 }
 
 (async function() {
@@ -41,8 +30,10 @@ async function findRemoteMedataByName(name) {
     }
 
     case 'install': {
-      const moduleName = process.argv[3];
-      const metadata = await findRemoteMedataByName(moduleName);
+      const moduleName   = process.argv[3];
+      const moduleCommit = process.argv[4];
+
+      const metadata = await getRemoteMetadata(moduleName, moduleCommit);
       if(!metadata) {
         console.error('Module does not exist');
         break;
