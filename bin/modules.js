@@ -1,16 +1,27 @@
 'use strict'
 
+const common           = require('mylife-home-common');
 const ModuleRepository = require('../lib/plugins/module-repository');
-
-const fs   = require('fs-extra');
-const path = require('path');
-
-const rootDirectory = path.resolve(__dirname, '..');
 
 const repository = new ModuleRepository();
 
+let _remoteList;
+
 async function findMedataByName(name) {
   const list = await repository.list();
+  return list.find(metadata => metadata.name === name);
+}
+
+async function remoteList() {
+  // cache it
+  if(!_remoteList) {
+    _remoteList = await common.utils.promise.fromCallback(done => common.admin.pluginFetcher(done))();
+  }
+  return _remoteList;
+}
+
+async function findRemoteMedataByName(name) {
+  const list = await remoteList();
   return list.find(metadata => metadata.name === name);
 }
 
@@ -30,14 +41,24 @@ async function findMedataByName(name) {
     }
 
     case 'install': {
-      throw new Error('TODO');
+      const moduleName = process.argv[3];
+      const metadata = await findRemoteMedataByName(moduleName);
+      if(!metadata) {
+        console.error('Module does not exist');
+        break;
+      }
+
+      console.log(`Installing module '${moduleName}'`);
+      await repository.install(metadata);
+      console.log('Modules installed');
+      break;
     }
 
     case 'uninstall': {
       const moduleName = process.argv[3];
       const metadata = await findMedataByName(moduleName);
       if(!metadata) {
-        console.log('Module does not exist');
+        console.error('Module does not exist');
         break;
       }
 
